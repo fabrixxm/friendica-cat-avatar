@@ -2,3 +2,9 @@
 
  Generate a default avatar based on David Revoy's cat-avatar-generator https://framagit.org/Deevad/cat-avatar-generator
  
+## Install
+
+ In Friendica `addon` folder:
+ 
+     git clone https://github.com/fabrixxm/friendica-cat-avatar.git catavatar
+    
