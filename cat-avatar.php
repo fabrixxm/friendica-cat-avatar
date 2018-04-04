@@ -1,7 +1,7 @@
 <?php
 /**
  * Name: Cat Avatar Generator
- * Description: Generate a default avatar based on David Revoy's cat-avatar-generator https://framagit.org/Deevad/cat-avatar-generator  
+ * Description: Generate a default avatar based on David Revoy's cat-avatar-generator https://framagit.org/Deevad/cat-avatar-generator
  * Version: 1.1
  * Author: Fabio <https://kirgroup.com/profile/fabrixxm>
  */
@@ -28,7 +28,7 @@ function catavatar_uninstall() {
 }
 
 /**
- * Looks up the avatar at catavatar.com and returns the URL.
+ * Returns the URL to the cat avatar
  *
  * @param $a array
  * @param &$b array
