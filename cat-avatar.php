@@ -22,7 +22,7 @@ function catavatar_install() {
  * Removes the addon hook
  */
 function catavatar_uninstall() {
-	Addon::unregisterHook('avatar_lookup', 'addon/catavatar/catavatar.php', 'catavatar_lookup');
+	Addon::unregisterHook('avatar_lookup', 'addon/cat-avatar/cat-avatar.php', 'catavatar_lookup');
 
 	logger("unregistered cat-avatar in avatar_lookup hook");
 }
