@@ -13,18 +13,18 @@ use Friendica\Core\L10n;
  * Installs the addon hook
  */
 function catavatar_install() {
-	Addon::registerHook('avatar_lookup', 'addon/cat-avatar/cat-avatar.php', 'catavatar_lookup');
+	Addon::registerHook('avatar_lookup', 'addon/catavatar/catavatar.php', 'catavatar_lookup');
 
-	logger("registered cat-avatar in avatar_lookup hook");
+	logger("registered catavatar in avatar_lookup hook");
 }
 
 /**
  * Removes the addon hook
  */
 function catavatar_uninstall() {
-	Addon::unregisterHook('avatar_lookup', 'addon/cat-avatar/cat-avatar.php', 'catavatar_lookup');
+	Addon::unregisterHook('avatar_lookup', 'addon/catavatar/catavatar.php', 'catavatar_lookup');
 
-	logger("unregistered cat-avatar in avatar_lookup hook");
+	logger("unregistered catavatar in avatar_lookup hook");
 }
 
 /**
@@ -36,7 +36,7 @@ function catavatar_uninstall() {
 function catavatar_lookup($a, &$b) {
 	$hash = md5(trim(strtolower($b['email'])));
 
-	$url = $a->get_baseurl().'/addon/cat-avatar/cat-avatar-generator/cat-avatar-generator.php?seed=' .$hash;
+	$url = $a->get_baseurl().'/addon/catavatar/cat-avatar-generator/cat-avatar-generator.php?seed=' .$hash;
 
 	$b['url'] = $url;
 	$b['success'] = true;
