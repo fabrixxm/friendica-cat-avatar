@@ -143,9 +143,15 @@ function catavatar_addon_settings_post(&$a, &$s) {
  * @param &$b array
  */
 function catavatar_lookup($a, &$b) {
-	$hash = md5(trim(strtolower($b['email'])));
+	$user = dba::selectFirst('user', ['uid'],['email'=>$b['email']]);
+	
+	$url = $a->get_baseurl().'/catavatar/'.$user['uid'];
 
-	$url = $a->get_baseurl().'/catavatar/'.$b['id'];
+	switch($b['size']) {
+		case 175: $url.="/4"; break;
+		case 80: $url.="/5"; break;
+		case 47: $url.="/6"; break;
+	}
 
 	$b['url'] = $url;
 	$b['success'] = true;
@@ -165,14 +171,13 @@ function catavatar_module(){}
 function catavatar_content($a) {
 	if ($a->argc < 2 || $a->argc > 3)
 		throw new NotFoundException(); // this should be catched on index and show default "not found" page.
+
+	$uid = intval($a->argv[1]);
 	
 	$size = 0;
 	if ($a->argc == 3) {
 		$size = intval($a->argv[2]);
 	}
-	
-	
-	$uid = intval($a->argv[1]);
 	
 	$user = dba::selectFirst('user', ['email'],
 		[
