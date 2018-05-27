@@ -1,3 +1,7 @@
+
+> This plugin is now developed on the official friendica-addons repository
+> https://github.com/friendica/friendica-addons
+
 # Friendica Cat Avatar Generator Addon
 
 Generate a default avatar based on David Revoy's cat-avatar-generator https://framagit.org/Deevad/cat-avatar-generator
